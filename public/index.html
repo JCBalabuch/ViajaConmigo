@@ -406,7 +406,7 @@
     // ── Cargar carpetas ───────────────────────────────────────────────
     async function loadFolders() {
       try {
-        const res     = await fetch('/.netlify/functions/folders');
+        const res     = await fetch('/api/folders');
         const folders = await res.json();
 
         if (!folders.length) {
@@ -465,7 +465,7 @@
       `;
 
       try {
-        const res    = await fetch(`/.netlify/functions/photos?folder=${folder}`);
+        const res    = await fetch(`/api/photos/${folder}`);
         const photos = await res.json();
 
         if (!photos.length) {

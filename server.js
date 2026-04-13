@@ -97,6 +97,5 @@ app.get("/api/photos/:folder", async (req, res) => {
 
 // ── Arranque ─────────────────────────────────────
 app.listen(PORT, () => {
-  console.log(`\n✅ Servidor iniciado`);
-  console.log(`🌍 http://localhost:${PORT}\n`);
+  console.log(`Servidor iniciado en puerto ${PORT}`);
 });
