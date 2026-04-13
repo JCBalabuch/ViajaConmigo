@@ -21,7 +21,7 @@ if (!CLOUD_NAME || !API_KEY || !API_SECRET) {
 
 const AUTH_HEADER = "Basic " + Buffer.from(`${API_KEY}:${API_SECRET}`).toString("base64");
 const CLOUDINARY  = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}`;
-const ROOT_FOLDER = "España";
+const ROOT_FOLDER = "Espa\u00f1a";
 
 // ── Helper ───────────────────────────────────────
 async function cloudinaryGet(url) {
@@ -61,6 +61,8 @@ app.get("/api/folders", async (_req, res) => {
 
 // ── API: fotos por carpeta (VERSIÓN CORRECTA) ────
 app.get("/api/photos/:folder", async (req, res) => {
+    console.log("📂 Petición recibida en /api/folders"); // ← añade esto
+
   try {
     const folder = decodeURIComponent(req.params.folder);
 
