@@ -4,10 +4,11 @@
   "description": "Galería de fotos de viajes",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "upload": "node scripts/upload.js",
+    "migrate": "node scripts/migrate.js"
   },
   "dependencies": {
-    "cloudinary": "^2.9.0",
     "dotenv": "^16.4.5",
     "express": "^4.19.2"
   },
